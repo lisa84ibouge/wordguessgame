@@ -152,7 +152,7 @@ document.getElementById("submitbutton").onclick = function (event) {
 
 
 
-    var userGuess = document.getElementById("textinput").value;
+    var userGuess = document.getElementById("textinput").value.toLowerCase();
 
     checkLetter(userGuess);
     document.getElementById("textinput").value = "";
