@@ -1,41 +1,44 @@
-
 h1 {
     font-family: 'Major Mono Display', monospace;
     font-size: 250%;
     color: yellow;
     text-align: center;
     margin-left: 150px;
-   margin-top: -250px;
-   font-weight: bold;
+    margin-top: -250px;
+    font-weight: bold;
 }
 
 p {
     font-size: 150%;
-    color: greenyellow ;
+    color: greenyellow;
 }
 
 #inputform {
     color: greenyellow;
     font-size: 150%;
-   
+
 }
-input{
+
+input {
     background-color: rgb(230, 230, 23);
 }
+
 h5 {
-color: black;
+    color: black;
 }
 
-body {background-color: rgb(202, 30, 145);
+body {
+    background-color: rgb(202, 30, 145);
 
-background-repeat: no-repeat;
-color: #daa520;
-font-weight: bold;
-text-align: right;
-margin-right: 200px;
-margin-top: 300px;
-font-size: 150%;
+    background-repeat: no-repeat;
+    color: #daa520;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 200px;
+    margin-top: 300px;
+    font-size: 150%;
 }
+
 .btn {
     font-size: 115%;
     margin-left: 50px;
@@ -44,12 +47,11 @@ font-size: 150%;
 
 
 #scoreBoard {
-  
+
     font-weight: bold;
     text-align: center;
     margin-left: 100px;
     max-width: auto;
     margin-bottom: -500px;
-    
-}
 
+}

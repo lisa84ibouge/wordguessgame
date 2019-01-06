@@ -42,17 +42,17 @@ function selectRandomWord() {
     wrongLetters = [];
     placeholder = [];
 
- // var numberOfStars = document.getElementById("currentWord")
+    // var numberOfStars = document.getElementById("currentWord")
 
     for (var i = 0; i < selectedWord.length; i++) {
-      
-        if (selectedWord[i] === ' '){
+
+        if (selectedWord[i] === ' ') {
             placeholder[i] = ' ';
-         } else { 
+        } else {
             placeholder[i] = '*';
         }
     }
-//document.getElementById("currentWord").textContent = placeholder.join('');
+    //document.getElementById("currentWord").textContent = placeholder.join('');
 
     document.getElementById("currentWord").innerHTML = placeholder.join(" ");
     document.getElementById("remainingGuesses").innerHTML = guessesLeft;
@@ -72,39 +72,40 @@ function checkLetter(letter) {
             // 6. change the display of the word ("_ _ _ _ _ " -> "a _ _ _ _")
             // @todo
             placeholder[i] = letter
-          
+
         }
-        
+
     }
     document.getElementById("currentWord").innerHTML = placeholder.join(" ");
 
-   if (word) {
+    if (word) {
         userGuesses++;
 
     } else {
         wrongLetters.push(letter);
         guessesLeft--;
-   
-    } 
-if (placeholder.join("") == selectedWord) {
-    document.getElementById("currentWord").innerHTML = "Great job! The word was "+ selectedWord + ".";
-    winCount++;
-    roundComplete();
+
+    }
+    if (placeholder.join("") == selectedWord) {
+        document.getElementById("currentWord").innerHTML = "Great job! The word was " + selectedWord + ".";
+        winCount++;
+        roundComplete();
+    } else if (guessesLeft == 0) {
+        lossCount++;
+        document.getElementById("currentWord").innerHTML = "Sorry! The word was " + selectedWord + ". Please try again!";
+
+        roundComplete();
+
+
+
+
+
+
+    } else {
+        updateDisplay();
+    }
 }
-else if (guessesLeft == 0) {
-    lossCount++;
-    document.getElementById("currentWord").innerHTML = "Sorry! The word was "+ selectedWord + ". Please try again!";
 
-roundComplete();
-
-    
-
-   
-
-
-}   else {
-    updateDisplay();}
-}   
 function updateDisplay() {
     document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
     document.getElementById("remainingGuesses").innerHTML = guessesLeft;
@@ -112,23 +113,23 @@ function updateDisplay() {
     document.getElementById("numberOfGamesLost").innerHTML = lossCount;
 
 }
-    
 
 
 
-    function roundComplete() {
-        console.log("Win Count: " + winCount + ""| "Loss Count " + lossCount + "" | "Guesses Left" + guessesLeft + "")
 
-        document.getElementById("remainingGuesses").innerHTML = guessesLeft;
-        document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
-        document.getElementById("numberOfGamesLost").innerHTML = lossCount;
-        document.getElementById("numberOfGamesWon").innerHTML = winCount;
-        document.getElementById("submitbutton").disabled = true;
-    
-     updateDisplay();
+function roundComplete() {
+    console.log("Win Count: " + winCount + "" | "Loss Count " + lossCount + "" | "Guesses Left" + guessesLeft + "")
 
-     
-} 
+    document.getElementById("remainingGuesses").innerHTML = guessesLeft;
+    document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
+    document.getElementById("numberOfGamesLost").innerHTML = lossCount;
+    document.getElementById("numberOfGamesWon").innerHTML = winCount;
+    document.getElementById("submitbutton").disabled = true;
+
+    updateDisplay();
+
+
+}
 
 
 // 3. register a user's input
@@ -143,20 +144,17 @@ selectRandomWord();
 
 
 
-document.getElementById("startbutton").onclick = function(event){
+document.getElementById("startbutton").onclick = function (event) {
     document.getElementById("textinput").value = "";
-selectRandomWord();
+    selectRandomWord();
 }
-document.getElementById("submitbutton").onclick = function (event){
+document.getElementById("submitbutton").onclick = function (event) {
 
 
 
-var userGuess = document.getElementById("textinput").value;
+    var userGuess = document.getElementById("textinput").value;
 
-checkLetter(userGuess);
-document.getElementById("textinput").value = "";
-document.getElementById("textinput").focus();
+    checkLetter(userGuess);
+    document.getElementById("textinput").value = "";
+    document.getElementById("textinput").focus();
 }
-
-
-
