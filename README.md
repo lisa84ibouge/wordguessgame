@@ -1,6 +1,6 @@
 # wordguessgame
 Week 3 Homework 
-This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code.
+This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript. This application demonstrates the working understanding of variables, arrays, loops, and conditionals to create a simple WordGuess game. 
 
 The concept was designed to quiz people on their knowledge of capital cities and make users  more culturally affluent and aware of locations in different countries so they may be interested to learn of this place or travel there after playing the game.
 
